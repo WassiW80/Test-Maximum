@@ -45,4 +45,25 @@ public class MaximumTest {
         float result = maximum.getMaximum(5.7f, 3.4f, 10.1f);
         Assert.assertEquals(10.1f,result,0.1);
     }
+
+    @Test
+    public void givenStringFirst_WhenLargest_ShouldReturnTrue() {
+        Maximum maximum = new Maximum();
+        String result = maximum.getMaximum("Apple", "Peach", "Banana");
+        Assert.assertEquals("Peach",result);
+    }
+
+    @Test
+    public void givenStringSecond_WhenLargest_ShouldReturnTrue() {
+        Maximum maximum = new Maximum();
+        String result = maximum.getMaximum("Peach", "Apple", "Banana");
+        Assert.assertEquals("Peach",result);
+    }
+
+    @Test
+    public void givenStringThird_WhenLargest_ShouldReturnTrue() {
+        Maximum maximum = new Maximum();
+        String result=maximum.getMaximum("Banana", "Apple", "Peach");
+        Assert.assertEquals("Peach",result);
+    }
 }
